@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Места — Коровкинг</title>
+  <meta name="description" content="Каталог мест Москвы для учёбы, работы и встреч: фильтры по стоимости, Wi-Fi, розеткам, тишине и времени работы.">
+  <meta name="theme-color" content="#FCF7F4">
+  <link rel="icon" type="image/png" href="assets/brand/favicon.png">
+  <link rel="apple-touch-icon" href="assets/brand/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Onest:wght@400;500;600;700;800;900&display=swap">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/pages.css">
+</head>
+<body data-page="places">
+  <div data-site-header></div>
+
+  <main id="main">
+    <section class="container catalog-head" aria-labelledby="catalog-title">
+      <h1 class="h-display catalog-head__title" id="catalog-title">Место под твою задачу<svg class="sparks sparks--pink catalog-head__sparks" viewBox="0 0 40 40" aria-hidden="true"><path d="M10 26 28 6M16 34l18-10" stroke="currentColor" stroke-width="4" stroke-linecap="round"/></svg></h1>
+      <p class="lead catalog-head__sub">Выбирай, где учиться, работать и собираться вместе</p>
+
+      <form class="search" role="search" id="search-form">
+        <label class="visually-hidden" for="search-input">Поиск по названию, району или метро</label>
+        <div class="search__field">
+          <svg class="icon" aria-hidden="true"><use href="assets/icons/sprite.svg#i-search"></use></svg>
+          <input class="search__input" id="search-input" name="q" type="search" placeholder="Название, район или метро" autocomplete="off" enterkeyhint="search">
+        </div>
+        <button class="btn btn--lime search__btn" type="submit">Показать места</button>
+      </form>
+
+      <div class="cats" role="group" aria-label="Категории мест" id="cats">
+        <button type="button" class="chip" data-cat="all" aria-pressed="true">Все места</button>
+        <button type="button" class="chip" data-cat="study" aria-pressed="false">Учёба и работа</button>
+        <button type="button" class="chip" data-cat="food" aria-pressed="false">Кафе и еда</button>
+        <button type="button" class="chip" data-cat="discount" aria-pressed="false">Со скидками</button>
+      </div>
+    </section>
+
+    <div class="container catalog">
+      <div class="filters-overlay" data-filters-close hidden></div>
+      <aside class="filters" id="filters" aria-labelledby="filters-title">
+        <div class="filters__head">
+          <h2 class="filters__title" id="filters-title">Фильтры</h2>
+          <button type="button" class="filters__reset" data-reset>Сбросить</button>
+          <button type="button" class="filters__close" data-filters-close aria-label="Закрыть фильтры">
+            <svg class="icon" aria-hidden="true"><use href="assets/icons/sprite.svg#i-close"></use></svg>
+          </button>
+        </div>
+
+        <form class="filters__form" id="filter-form" novalidate>
+          <fieldset class="fgroup">
+            <legend class="fgroup__title">Расположение</legend>
+            <label class="visually-hidden" for="f-district">Район</label>
+            <select class="select" id="f-district" name="district">
+              <option value="">Все районы</option>
+            </select>
+          </fieldset>
+
+          <fieldset class="fgroup">
+            <legend class="fgroup__title">Стоимость</legend>
+            <label class="check"><input type="checkbox" name="free" value="1">Бесплатно</label>
+            <div class="price-range" data-price-range>
+              <label class="field__label price-range__unit-label" for="f-unit">Единица цены</label>
+              <select class="select" id="f-unit" name="unit">
+                <option value="hour">₽ в час (коворкинги)</option>
+                <option value="check">Средний чек (кафе)</option>
+                <option value="ticket">Вход (билет)</option>
+              </select>
+              <div class="price-range__inputs">
+                <label class="visually-hidden" for="f-pmin">Цена от, ₽</label>
+                <input class="input" id="f-pmin" name="pmin" type="number" inputmode="numeric" min="0" step="50" placeholder="от">
+                <span aria-hidden="true">–</span>
+                <label class="visually-hidden" for="f-pmax">Цена до, ₽</label>
+                <input class="input" id="f-pmax" name="pmax" type="number" inputmode="numeric" min="0" step="50" placeholder="до">
+              </div>
+              <p class="field__hint">Диапазон сравнивает только места с выбранной единицей. Бесплатные места подходят, если «от» не указано.</p>
+            </div>
+            <label class="check"><input type="checkbox" name="budget" value="1000">До 1000 ₽ за визит</label>
+            <p class="field__hint">Визит: средний чек, цена входа или 2 часа почасовой оплаты.</p>
+          </fieldset>
+
+          <fieldset class="fgroup">
+            <legend class="fgroup__title">Для работы</legend>
+            <label class="check"><input type="checkbox" name="wifi" value="1">Wi-Fi</label>
+            <label class="check"><input type="checkbox" name="sockets" value="1">Розетки</label>
+            <label class="check"><input type="checkbox" name="quiet" value="1">Тихо</label>
+            <label class="check"><input type="checkbox" name="team" value="1">Можно с командой</label>
+            <label class="check"><input type="checkbox" name="calls" value="1">Можно на созвон</label>
+          </fieldset>
+
+          <fieldset class="fgroup">
+            <legend class="fgroup__title">Время</legend>
+            <label class="switch"><input type="checkbox" name="open" value="1" role="switch">Открыто сейчас</label>
+            <label class="switch"><input type="checkbox" name="h24" value="1" role="switch">Открыто круглосуточно</label>
+            <label class="switch"><input type="checkbox" name="weekend" value="1" role="switch">Работает в выходные</label>
+            <p class="field__hint" data-msk-time>По московскому времени</p>
+          </fieldset>
+
+          <fieldset class="fgroup">
+            <legend class="fgroup__title">Скидки</legend>
+            <label class="check"><input type="checkbox" name="dstudent" value="1">По студенческому</label>
+            <label class="check"><input type="checkbox" name="dage" value="1">По возрасту</label>
+          </fieldset>
+        </form>
+
+        <div class="filters__apply">
+          <button type="button" class="btn btn--lime btn--block" data-apply>Показать места</button>
+        </div>
+      </aside>
+
+      <section class="results" aria-labelledby="results-count">
+        <h2 class="results__count" id="results-count" aria-live="polite">Места</h2>
+
+        <div class="toolbar">
+          <button type="button" class="btn btn--sm toolbar__filters" data-filters-open aria-controls="filters" aria-expanded="false">
+            <svg class="icon" aria-hidden="true"><use href="assets/icons/sprite.svg#i-filter"></use></svg>
+            Фильтры<span class="toolbar__badge" data-filters-badge hidden></span>
+          </button>
+          <label class="visually-hidden" for="sort">Сортировка</label>
+          <select class="select toolbar__sort" id="sort">
+            <option value="popular">По популярности</option>
+            <option value="price-asc">Сначала дешевле</option>
+            <option value="price-desc">Сначала дороже</option>
+          </select>
+          <div class="view-toggle" role="group" aria-label="Вид">
+            <button type="button" class="view-toggle__btn" data-view="list" aria-pressed="true">
+              <svg class="icon" aria-hidden="true"><use href="assets/icons/sprite.svg#i-list"></use></svg>Список</button>
+            <button type="button" class="view-toggle__btn" data-view="map" aria-pressed="false">
+              <svg class="icon" aria-hidden="true"><use href="assets/icons/sprite.svg#i-pin"></use></svg>Карта</button>
+          </div>
+          <button type="button" class="fav-toggle" data-only-fav aria-pressed="false">
+            <svg class="icon" aria-hidden="true"><use href="assets/icons/sprite.svg#i-heart"></use></svg>
+            <span>Только избранное</span><span class="fav-toggle__count" data-fav-count>0</span>
+          </button>
+        </div>
+
+        <p class="notice results__sort-note" data-sort-note hidden>
+          <svg class="icon" aria-hidden="true"><use href="assets/icons/sprite.svg#i-info"></use></svg>
+          <span>Цены в разных единицах не сравниваются: сначала бесплатные, затем почасовые, средний чек и вход — внутри каждой группы по цене.</span>
+        </p>
+
+        <ul class="active-filters" role="list" aria-label="Активные фильтры" data-active-filters></ul>
+
+        <div class="results__list" data-results-list></div>
+
+        <div class="results__map" data-results-map hidden>
+          <div class="map" id="map" role="region" aria-label="Карта мест"></div>
+          <div class="map-error" data-map-error hidden>
+            <p class="empty-state__title">Карта сейчас недоступна</p>
+            <p>Не получилось загрузить картографический сервис. Проверь подключение к интернету или вернись к списку.</p>
+            <button type="button" class="btn btn--dark" data-view="list">Вернуться к списку</button>
+          </div>
+          <p class="notice map-note"><svg class="icon" aria-hidden="true"><use href="assets/icons/sprite.svg#i-info"></use></svg><span>Демо-места отмечены приблизительно — рядом со станцией метро.</span></p>
+        </div>
+
+        <p class="results__footer" data-results-footer></p>
+      </section>
+    </div>
+
+    <section class="cta-pink places-cta" aria-labelledby="places-cta-title">
+      <div class="container places-cta__inner">
+        <div class="places-cta__art" aria-hidden="true">
+          <img src="assets/brand/logo-cow.png" alt="" width="195" height="154" loading="lazy">
+          <p class="sticker places-cta__sticker">Хорошие<br>места<br>для больших<br>планов ♥</p>
+        </div>
+        <div class="places-cta__text">
+          <h2 class="h2" id="places-cta-title">Не знаешь, что выбрать?</h2>
+          <p class="lead">Подберём место под твои планы</p>
+        </div>
+        <a class="btn btn--dark places-cta__btn" href="quiz.html">Где тебе пастись?
+          <svg class="icon" aria-hidden="true"><use href="assets/icons/sprite.svg#i-arrow-up-right"></use></svg></a>
+      </div>
+    </section>
+  </main>
+
+  <div data-site-footer></div>
+
+  <script src="data/places.js"></script>
+  <script src="data/articles.js"></script>
+  <script src="js/core.js"></script>
+  <script src="js/layout.js"></script>
+  <script src="js/catalog.js"></script>
+</body>
+</html>

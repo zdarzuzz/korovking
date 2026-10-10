@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Подбор места — Коровкинг</title>
+  <meta name="description" content="Ответь на несколько вопросов — подберём место для учёбы, работы или встречи с командой.">
+  <meta name="theme-color" content="#FCF7F4">
+  <link rel="icon" type="image/png" href="assets/brand/favicon.png">
+  <link rel="apple-touch-icon" href="assets/brand/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Onest:wght@400;500;600;700;800;900&display=swap">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/pages.css">
+</head>
+<body data-page="quiz">
+  <div data-site-header></div>
+
+  <main id="main">
+    <div class="container quiz">
+      <header class="quiz__head">
+        <p class="eyebrow">Подбор места</p>
+        <h1 class="h1">Где тебе сегодня пастись?</h1>
+        <p class="lead">Три шага — и мы подберём до трёх мест из каталога с объяснением, почему они подходят.</p>
+      </header>
+
+      <ol class="steps-line quiz__progress" role="list" aria-label="Прогресс подбора" data-progress>
+        <li data-step-dot="1"><span>1</span>О тебе</li>
+        <li data-step-dot="2"><span>2</span>Предпочтения</li>
+        <li data-step-dot="3"><span>3</span>Результат</li>
+      </ol>
+      <p class="visually-hidden" aria-live="polite" data-step-status></p>
+
+      <form class="quiz__form" id="quiz-form" novalidate>
+        <!-- Шаг 1 -->
+        <fieldset class="quiz-step" data-step="1">
+          <legend class="quiz-step__title" tabindex="-1">Что планируешь делать?</legend>
+          <div class="task-options">
+            <label class="task-option">
+              <input type="radio" name="task" value="solo">
+              <span class="task-option__box">
+                <span class="task-option__title">Поработать одному</span>
+                <span class="task-option__text">Сосредоточиться, доделать проект или подработку</span>
+              </span>
+            </label>
+            <label class="task-option">
+              <input type="radio" name="task" value="study">
+              <span class="task-option__box">
+                <span class="task-option__title">Учиться</span>
+                <span class="task-option__text">Конспекты, курсовая, подготовка к семинару или экзамену</span>
+              </span>
+            </label>
+            <label class="task-option">
+              <input type="radio" name="task" value="team">
+              <span class="task-option__box">
+                <span class="task-option__title">Встретиться с командой</span>
+                <span class="task-option__text">Обсудить проект, поработать вместе, отрепетировать</span>
+              </span>
+            </label>
+          </div>
+          <p class="field__error" data-step1-error aria-live="polite"></p>
+        </fieldset>
+
+        <!-- Шаг 2 -->
+        <fieldset class="quiz-step" data-step="2" hidden>
+          <legend class="quiz-step__title" tabindex="-1">Что для тебя важно?</legend>
+          <div class="quiz-grid">
+            <div class="field">
+              <label class="field__label" for="q-district">Район</label>
+              <select class="select" id="q-district" name="district"><option value="">Неважно</option></select>
+            </div>
+            <div class="field">
+              <label class="field__label" for="q-budget">Бюджет на визит</label>
+              <select class="select" id="q-budget" name="budget" aria-describedby="q-budget-hint">
+                <option value="">Неважно</option>
+                <option value="0">Только бесплатно</option>
+                <option value="300">До 300 ₽</option>
+                <option value="600">До 600 ₽</option>
+                <option value="1000">До 1000 ₽</option>
+                <option value="2000">До 2000 ₽</option>
+              </select>
+              <span class="field__hint" id="q-budget-hint">Кафе — средний чек, вход — цена билета, почасовые места — за выбранное время.</span>
+            </div>
+            <div class="field">
+              <label class="field__label" for="q-hours">Сколько времени проведёшь</label>
+              <select class="select" id="q-hours" name="hours">
+                <option value="2">1–2 часа</option>
+                <option value="4">3–4 часа</option>
+                <option value="8">Весь день</option>
+              </select>
+            </div>
+          </div>
+          <fieldset class="quiz-sub">
+            <legend class="field__label">Удобства — отметь, что хотелось бы</legend>
+            <div class="quiz-checks">
+              <label class="check"><input type="checkbox" name="quiet" value="1">Тихо</label>
+              <label class="check"><input type="checkbox" name="sockets" value="1">Розетки</label>
+              <label class="check"><input type="checkbox" name="wifi" value="1">Wi-Fi</label>
+              <label class="check"><input type="checkbox" name="calls" value="1">Можно на созвон</label>
+              <label class="check"><input type="checkbox" name="student" value="1">Скидка по студенческому</label>
+            </div>
+          </fieldset>
+          <label class="switch quiz-open"><input type="checkbox" name="open" value="1" role="switch">Только открытые сейчас</label>
+          <p class="field__hint">Район, бюджет и «открыто сейчас» — обязательные условия. Удобства — пожелания: мы покажем, какие из них совпали.</p>
+        </fieldset>
+
+        <!-- Шаг 3 -->
+        <section class="quiz-step" data-step="3" hidden aria-labelledby="quiz-result-title">
+          <h2 class="quiz-step__title" id="quiz-result-title" tabindex="-1">Вот где можно пастись</h2>
+          <div data-results></div>
+        </section>
+
+        <div class="quiz__nav">
+          <button type="button" class="btn" data-back hidden>
+            <svg class="icon" aria-hidden="true"><use href="assets/icons/sprite.svg#i-arrow-left"></use></svg>Назад</button>
+          <button type="button" class="btn btn--dark" data-next>Далее
+            <svg class="icon" aria-hidden="true"><use href="assets/icons/sprite.svg#i-arrow-right"></use></svg></button>
+          <button type="submit" class="btn btn--lime" data-submit hidden>Подобрать</button>
+          <button type="button" class="btn btn--dark" data-restart hidden>Пройти заново</button>
+        </div>
+      </form>
+
+      <img class="quiz__cow" src="assets/brand/logo-cow.png" alt="" width="195" height="154">
+    </div>
+  </main>
+
+  <div data-site-footer></div>
+
+  <script src="data/places.js"></script>
+  <script src="data/articles.js"></script>
+  <script src="js/core.js"></script>
+  <script src="js/layout.js"></script>
+  <script src="js/quiz.js"></script>
+</body>
+</html>

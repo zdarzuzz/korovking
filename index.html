@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Коровкинг — места Москвы для учёбы, работы и встреч</title>
+  <meta name="description" content="Студенческое медиа и каталог мест Москвы, где удобно учиться, работать и встречаться с командой.">
+  <meta name="theme-color" content="#FCF7F4">
+  <link rel="icon" type="image/png" href="assets/brand/favicon.png">
+  <link rel="apple-touch-icon" href="assets/brand/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Onest:wght@400;500;600;700;800;900&display=swap">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/pages.css">
+</head>
+<body data-page="home">
+  <div data-site-header></div>
+
+  <main id="main">
+    <!-- 1. Первый экран -->
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero__media">
+        <img src="assets/images/hero-home.jpg" alt="Студентка конспектирует за ноутбуком со стикерами в светлом коворкинге" width="739" height="651" fetchpriority="high">
+      </div>
+      <div class="container hero__inner">
+        <div class="hero__text">
+          <p class="sticker hero__sticker" aria-hidden="true">Хорошие<br>места<br>для больших<br>идей</p>
+          <svg class="hero__arrow" viewBox="0 0 60 50" aria-hidden="true"><path d="M54 6C38 6 22 14 14 40m0 0-6-9m6 9 9-5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <h1 class="h-display" id="hero-title">Знаем,<br>где пастись</h1>
+          <p class="hero__lead">Теперь находить места для учёбы, работы и&nbsp;встреч в городе стало проще</p>
+          <div class="hero__actions">
+            <a class="btn btn--lime" href="places.html">Выбрать место</a>
+            <a class="btn" href="about.html">О проекте</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. Куда сегодня? -->
+    <section class="section picks" aria-labelledby="picks-title">
+      <div class="container">
+        <h2 class="h2 section__title" id="picks-title">Куда сегодня?</h2>
+        <ul class="picks__grid" role="list">
+          <li class="pick pick--wide">
+            <a class="pick__link" href="places.html?sort=popular">
+              <span class="pick__media">
+                <img src="assets/images/pick-popular.jpg" alt="Большой светлый зал, где люди работают за ноутбуками" width="459" height="346" loading="lazy">
+                <span class="pick__sticker pick__sticker--heart" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 20.3S3.5 15.2 3.5 9.1A4.6 4.6 0 0 1 12 6.6a4.6 4.6 0 0 1 8.5 2.5c0 6.1-8.5 11.2-8.5 11.2Z" fill="none" stroke="currentColor" stroke-width="1.8"/></svg></span>
+              </span>
+              <span class="pick__title">Популярные места</span>
+            </a>
+          </li>
+          <li class="pick">
+            <a class="pick__link" href="places.html?free=1&amp;sort=popular">
+              <span class="pick__media"><img src="assets/images/pick-free.jpg" alt="Студент читает книгу за столом в библиотеке" width="237" height="346" loading="lazy"></span>
+              <span class="pick__title" data-free-title>Бесплатные места</span>
+            </a>
+          </li>
+          <li class="pick">
+            <a class="pick__link" href="places.html?weekend=1&amp;budget=1000&amp;sort=popular">
+              <span class="pick__media"><img src="assets/images/pick-weekend.jpg" alt="Люди сидят на ступенях светлого культурного центра" width="237" height="346" loading="lazy"></span>
+              <span class="pick__title">Выходные за 1к</span>
+            </a>
+          </li>
+          <li class="pick">
+            <a class="pick__link" href="places.html?cat=food&amp;sort=popular">
+              <span class="pick__media">
+                <img src="assets/images/pick-snack.jpg" alt="Капучино и круассан на столике кафе" width="237" height="346" loading="lazy">
+                <span class="pick__sticker pick__sticker--cup" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 10h11v4a5 5 0 0 1-5 5h-1a5 5 0 0 1-5-5v-4Zm11 1h1.5a2.5 2.5 0 0 1 0 5H15.5M8 4.5c0 1.2 1 1.3 1 2.5m3-2.5c0 1.2 1 1.3 1 2.5M4 21h14" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></span>
+              </span>
+              <span class="pick__title">Время перекусить</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- 3. Почитать между делом -->
+    <section class="section reads" aria-labelledby="reads-title">
+      <div class="container">
+        <div class="section__head">
+          <h2 class="h2" id="reads-title">Почитать между делом</h2>
+          <a class="link-arrow link-arrow--plain" href="media.html">Все статьи <svg class="icon" aria-hidden="true"><use href="assets/icons/sprite.svg#i-arrow-right"></use></svg></a>
+        </div>
+        <ol class="read-rows" role="list" data-home-reads>
+          <!-- строки статей рендерит js/home.js из data/articles.js -->
+        </ol>
+        <noscript><p><a href="media.html">Перейти ко всем статьям</a></p></noscript>
+      </div>
+    </section>
+
+    <!-- 4. Квиз -->
+    <section class="cta-pink quiz-cta" aria-labelledby="quiz-cta-title">
+      <div class="container quiz-cta__inner">
+        <div class="quiz-cta__text">
+          <h2 class="h2" id="quiz-cta-title">Где тебе сегодня пастись?</h2>
+          <p>Ответь на несколько вопросов, и мы подберём тебе пространство из каталога</p>
+          <a class="btn btn--dark quiz-cta__btn" href="quiz.html">Подобрать место</a>
+        </div>
+        <div class="quiz-cta__steps" aria-hidden="true">
+          <ol class="steps-line" role="list">
+            <li class="is-current"><span>1</span>О тебе</li>
+            <li><span>2</span>Предпочтения</li>
+            <li><span>3</span>Результат</li>
+          </ol>
+          <p class="hand quiz-cta__note">Три шага<br>до твоего идеального<br>места</p>
+          <svg class="quiz-cta__curve" viewBox="0 0 90 30"><path d="M2 8c20 22 55 22 82 6m0 0-8-1m8 1-3 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <img class="quiz-cta__cow" src="assets/brand/logo-cow.png" alt="" width="195" height="154" loading="lazy">
+      </div>
+    </section>
+  </main>
+
+  <div data-site-footer></div>
+
+  <script src="data/places.js"></script>
+  <script src="data/articles.js"></script>
+  <script src="js/core.js"></script>
+  <script src="js/layout.js"></script>
+  <script src="js/home.js"></script>
+</body>
+</html>

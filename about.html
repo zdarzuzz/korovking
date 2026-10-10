@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>О проекте — Коровкинг</title>
+  <meta name="description" content="Коровкинг — студенческое медиа о местах Москвы, где удобно учиться, работать и быть вместе.">
+  <meta name="theme-color" content="#FCF7F4">
+  <link rel="icon" type="image/png" href="assets/brand/favicon.png">
+  <link rel="apple-touch-icon" href="assets/brand/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Onest:wght@400;500;600;700;800;900&display=swap">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/pages.css">
+</head>
+<body data-page="about">
+  <div data-site-header></div>
+
+  <main id="main">
+    <!-- Своё место есть у каждого -->
+    <section class="container about-hero" aria-labelledby="about-title">
+      <div class="about-hero__text">
+        <p class="eyebrow">О проекте</p>
+        <h1 class="h-display about-hero__title" id="about-title">Своё место есть у&nbsp;каждого</h1>
+        <p class="lead">Коровкинг — медиа о местах, где удобно учиться, работать и быть вместе.</p>
+        <a class="link-arrow about-hero__link" href="#why">Знакомься с проектом
+          <svg class="icon" aria-hidden="true"><use href="assets/icons/sprite.svg#i-arrow-down"></use></svg></a>
+        <svg class="sparks about-hero__sparks" viewBox="0 0 40 40" aria-hidden="true"><path d="M6 12l14 8M14 4l8 14" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></svg>
+        <p class="sticker about-hero__sticker" aria-hidden="true">Знаем,<br>где пастись ♥</p>
+      </div>
+      <div class="about-hero__media">
+        <img src="assets/images/about-hero.jpg" alt="Трое студентов смеются и работают вместе за ноутбуком в библиотеке" width="649" height="483">
+      </div>
+    </section>
+
+    <!-- Хорошее место меняет день -->
+    <section class="container about-why" id="why" aria-labelledby="why-title">
+      <p class="about-why__label">01 / Зачем мы здесь</p>
+      <div>
+        <h2 class="h2" id="why-title">Хорошее место меняет день</h2>
+        <p class="lead">Дома отвлекает всё. В кафе не всегда есть розетки. А для встречи с командой хочется найти что-то своё. Мы собираем места и истории, которые помогают устроиться в городе поудобнее.</p>
+      </div>
+    </section>
+
+    <!-- Что есть в Коровкинге -->
+    <section class="container about-features" aria-labelledby="features-title">
+      <h2 class="h2 section__title" id="features-title">Что есть в Коровкинге</h2>
+      <ul class="tiles" role="list">
+        <li class="tile tile--lime">
+          <svg class="sparks tile__sparks" viewBox="0 0 40 40" aria-hidden="true"><path d="M8 18l10-10M14 26h16" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></svg>
+          <svg class="tile__icon" aria-hidden="true"><use href="assets/icons/sprite.svg#i-pin-fill"></use></svg>
+          <h3 class="h3"><a class="tile__link" href="places.html">Места под задачу</a></h3>
+          <p>Ищи по району, бюджету и тому, что важно для работы.</p>
+        </li>
+        <li class="tile tile--sand">
+          <svg class="sparks tile__sparks" viewBox="0 0 40 40" aria-hidden="true"><path d="M8 18l10-10M14 26h16" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></svg>
+          <svg class="tile__icon" aria-hidden="true"><use href="assets/icons/sprite.svg#i-book"></use></svg>
+          <h3 class="h3"><a class="tile__link" href="media.html">Медиа между делом</a></h3>
+          <p>Читай про учёбу, город, отдых и жизнь между дедлайнами.</p>
+        </li>
+        <li class="tile tile--pink">
+          <svg class="sparks tile__sparks" viewBox="0 0 40 40" aria-hidden="true"><path d="M8 18l10-10M14 26h16" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></svg>
+          <svg class="tile__icon" aria-hidden="true"><use href="assets/icons/sprite.svg#i-checklist"></use></svg>
+          <h3 class="h3"><a class="tile__link" href="quiz.html">Подбор под тебя</a></h3>
+          <p>Ответь на несколько вопросов и найди подходящее пространство.</p>
+        </li>
+      </ul>
+    </section>
+
+    <!-- На что мы смотрим -->
+    <section class="container about-criteria" aria-labelledby="criteria-title">
+      <h2 class="h2 section__title" id="criteria-title">На что мы смотрим</h2>
+      <div class="about-criteria__grid">
+        <div class="about-criteria__media">
+          <img src="assets/images/about-checklist.jpg" alt="Стол с ноутбуком, удлинителем, кофе и чек-листом: розетки, Wi-Fi, тишина, удобные столы, атмосфера" width="775" height="469" loading="lazy">
+        </div>
+        <div>
+          <ol class="criteria" role="list">
+            <li><span class="criteria__num">01</span><div><h3 class="h3">Удобство</h3><p>Розетки, Wi-Fi, тишина и место для команды.</p></div></li>
+            <li><span class="criteria__num">02</span><div><h3 class="h3">Условия</h3><p>Стоимость, часы работы и правила посещения.</p></div></li>
+            <li><span class="criteria__num">03</span><div><h3 class="h3">Атмосфера</h3><p>Как устроено пространство и для каких задач подходит.</p></div></li>
+          </ol>
+          <p class="notice criteria__note"><svg class="icon" aria-hidden="true"><use href="assets/icons/sprite.svg#i-info"></use></svg><span>Условия могут меняться — перед визитом загляни на сайт места.</span></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Делаем для тех, кто тоже ищет -->
+    <section class="container about-us" aria-labelledby="us-title">
+      <div class="about-us__text">
+        <h2 class="h2" id="us-title">Делаем для тех,<br>кто тоже ищет</h2>
+        <p class="lead">Мы — студенты. Учимся, работаем над проектами и ищем места, где получается сосредоточиться. Коровкинг вырос из этого опыта.</p>
+      </div>
+      <div class="about-us__art" aria-hidden="true">
+        <svg class="sparks about-us__sparks" viewBox="0 0 40 40"><path d="M8 10l10 12M22 6l2 14" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></svg>
+        <img src="assets/brand/mascot-laptop.png" alt="" width="182" height="180" loading="lazy">
+        <p class="sticker about-us__sticker">Те же<br>студенты.<br>Те же<br>вопросы.<br>Больше мест ♥</p>
+      </div>
+    </section>
+
+    <!-- Знаешь хорошее место? -->
+    <section class="container suggest-cta-wrap" aria-labelledby="suggest-title">
+      <div class="cta-pink suggest-cta">
+        <div>
+          <h2 class="h2" id="suggest-title">Знаешь хорошее место?</h2>
+          <p class="lead">Поделись находкой — поможем другим найти своё.</p>
+        </div>
+        <button type="button" class="btn btn--dark btn--pill" data-open-form="place">Предложить место
+          <svg class="icon" aria-hidden="true"><use href="assets/icons/sprite.svg#i-arrow-up-right"></use></svg></button>
+        <svg class="sparks suggest-cta__sparks" viewBox="0 0 40 40" aria-hidden="true"><path d="M8 14l12 8M24 6l4 14" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></svg>
+      </div>
+    </section>
+  </main>
+
+  <div data-site-footer></div>
+
+  <script src="data/places.js"></script>
+  <script src="data/articles.js"></script>
+  <script src="js/core.js"></script>
+  <script src="js/layout.js"></script>
+</body>
+</html>

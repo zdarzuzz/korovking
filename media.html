@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Медиа — Коровкинг</title>
+  <meta name="description" content="Про учёбу, работу и жизнь между дедлайнами: материалы студенческого медиа «Коровкинг».">
+  <meta name="theme-color" content="#FCF7F4">
+  <link rel="icon" type="image/png" href="assets/brand/favicon.png">
+  <link rel="apple-touch-icon" href="assets/brand/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Onest:wght@400;500;600;700;800;900&display=swap">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/pages.css">
+</head>
+<body data-page="media">
+  <div data-site-header></div>
+
+  <main id="main">
+    <section class="container media-head" aria-labelledby="media-title">
+      <p class="eyebrow">Медиа</p>
+      <h1 class="h-display media-head__title" id="media-title">Почитать между делом</h1>
+      <p class="lead">Про учёбу, работу и жизнь между дедлайнами.</p>
+      <div class="rubrics" role="group" aria-label="Рубрики" data-rubrics>
+        <button type="button" class="chip chip--outline" data-rubric="all" aria-pressed="true">Всё</button>
+        <button type="button" class="chip chip--outline" data-rubric="study" aria-pressed="false">Учёба и работа</button>
+        <button type="button" class="chip chip--outline" data-rubric="city" aria-pressed="false">Город и люди</button>
+        <button type="button" class="chip chip--outline" data-rubric="care" aria-pressed="false">Забота о себе</button>
+        <button type="button" class="chip chip--outline" data-rubric="stories" aria-pressed="false">Истории</button>
+      </div>
+      <svg class="sparks media-head__sparks" viewBox="0 0 40 40" aria-hidden="true"><path d="M8 14l14 6M6 28h16" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></svg>
+      <p class="sticker media-head__sticker" aria-hidden="true">Больше<br>чем<br>коворкинги<br>— истории<br>людей ♥</p>
+    </section>
+
+    <section class="container" aria-label="Выбор редакции" data-featured-wrap>
+      <div data-featured></div>
+    </section>
+
+    <section class="container section media-feed" aria-labelledby="feed-title">
+      <h2 class="h2 section__title" id="feed-title" data-feed-title>Свежие материалы</h2>
+      <p class="media-feed__count visually-hidden" aria-live="polite" data-feed-count></p>
+      <div class="article-grid" data-feed></div>
+      <div class="media-feed__more">
+        <button type="button" class="btn btn--pill" data-more>Ещё почитать
+          <svg class="icon" aria-hidden="true"><use href="assets/icons/sprite.svg#i-arrow-down"></use></svg></button>
+      </div>
+    </section>
+
+    <section class="container story-cta-wrap" aria-labelledby="story-title">
+      <div class="cta-pink story-cta">
+        <div class="story-cta__text">
+          <h2 class="h2" id="story-title">Есть история?<br>Расскажи нам</h2>
+          <p>О местах, людях и своём способе справляться с делами.</p>
+          <button type="button" class="btn btn--dark btn--pill" data-open-form="material">Предложить материал
+            <svg class="icon" aria-hidden="true"><use href="assets/icons/sprite.svg#i-arrow-up-right"></use></svg></button>
+        </div>
+        <div class="story-cta__art" aria-hidden="true">
+          <svg class="sparks story-cta__sparks" viewBox="0 0 40 40"><path d="M8 10l10 12M20 6l4 14M30 14l-4 10" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></svg>
+          <img src="assets/brand/mascot-laptop.png" alt="" width="182" height="180" loading="lazy">
+          <p class="sticker story-cta__sticker">Твои<br>истории<br>тоже<br>важны ♥</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div data-site-footer></div>
+
+  <script src="data/places.js"></script>
+  <script src="data/articles.js"></script>
+  <script src="js/core.js"></script>
+  <script src="js/layout.js"></script>
+  <script src="js/media.js"></script>
+</body>
+</html>
